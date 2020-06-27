@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<read>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+
+label{Color: ; border:90px; font-weight: bold;}
+
+input[type="submit"]{ 
+  border-radius: 5px; 
+  Color:white; 
+  background: blue ; 
+  float:right; 
+  padding: 5px; 
+  margin: 0px 5px;
+
+}
+
+input[type=text] {
+  width: 50%;
+   border-radius: 5px;
+   padding: 5px;
+     display: inline-block;
+}   
+
+.bt{
+        border-radius: 5px ; 
+       background-color: green;
+       text-align: center;
+      vertical-align: middle;
+      padding: 5px;   
+      float:center;
+}
+
+
+.btn {   border-radius: 5px ; 
+       background-color: red;
+       text-align: center;
+      vertical-align: middle;
+      padding: 5px; 
+      float:right;
+      margin: 0px 23px;
+
+}
+
+p { font-weight: bold;
+  margin-top: auto; 
+  background: #ffff4d ;
+  color: red;
+}
+
+h4 { font-weight: bold;
+  margin-top: auto; 
+  background: #ffff4d ;
+  color: #003300;
+}
+
+.center {
+  margin: auto;
+  background: #cbe6e459 ;
+  width: 30%;
+  height: 50%;
+  border:outset; 
+-moz-border-radius:1px;
+-webkit-border-radius:1px;
+ border-radius:5px;
+}
+
+
+
+
+</style>
+</read>
+
+
+<body >
+
+<center><p1> </p1> </center>
+
+
+<div  class="center">
+
+
+
+<center><h4>QUAL COMBUSTÍVEL ABASTECER HOJE?</h4></center>
+
+<form name="calcform" method="post" action="">
+
+  <label for="GL">PREÇO GASOLINA</label><br>
+  
+  <input type="text" id="GL" name="GL" value=""   >
+  <!--<input type="submit" ; value=""; text-align="center";-->
+  <br>
+  <br>
+
+  <label for="AL">PREÇO ÁLCOOL</label><br>
+  
+  <input type="text" id="AL" name="AL" value=""> 
+  <br>
+  <br>
+</form> 
+
+
+<center>  
+   <button class="bt" style="color:white;"onclick="myFunction()">Calcular</button>
+   <p>
+<p id="demo"></p>
+</center>
+
+
+<script>
+//o preço do litro do álcool tem que custar até 70% do litro da gasolina
+
+function myFunction() {
+
+var GL = document.calcform.GL.value ;
+var AL = document.calcform.AL.value ;
+if (AL < ( GL*0.7)){
+  var res  =" ÁLCOOL" ;
+} 
+
+if (AL == ( GL*0.7)) {
+  var res  = " QUALQUER UM DELES!";
+}
+
+if (AL > ( GL*0.7)) { 
+  var res  = " GASOLINA" ;
+}
+
+
+document.getElementById("demo").innerHTML = "Abasteça com " + res ;
+
+}
+</script>
+
+</div>
+</body>
+
+</html>
